@@ -1,0 +1,30 @@
+(/ 3 4)
+(/ 60 3)
+
+(define k 5)
+((lambda (n) (set! n (- n 1)) n) k) ; returns 4
+((lambda (n) n) k) ; return 5
+
+;;sample code similiar to the ones in the test
+;(define x 1)
+;
+;(define fun1
+;    (lambda ()
+;        (set! x 10)))
+;        
+;(define fun2
+;    (lambda ()
+;        (set! x 9)))
+;        
+;(define fun3
+;    (lambda ()
+;        (let ((x 8))
+;            (fun2))))
+;            
+;x ; prints 1
+;
+;(fun1)
+;x ; prints 10
+;            
+;(fun3)
+;x ; prints 9

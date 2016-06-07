@@ -1,0 +1,9 @@
+(letrec ((sum (lambda (x)
+                (if (= x 0)
+                    0
+                    (+ x (sum (- x 1)))))) (a 5))
+  (begin
+    (set! a 6)
+    (sum a)))
+    
+(lambda () 1)

@@ -1,0 +1,20 @@
+(define gen-lazy-list
+  (lambda (start stop)
+    (if (> start stop)
+        #f
+        (cons start
+            (lambda () (gen-lazy-list (+ start 1) stop))))))
+
+(define lazy (gen-lazy-list 1 3))
+
+lazy ; (1. #<procedure>)
+(car lazy) ; 1
+(cdr lazy) ; #<procedure>
+((cdr lazy)) ; (2 . #<procedure>)
+(car ((cdr lazy))) ; 2
+(cdr ((cdr lazy))) ; #<procedure>
+((cdr ((cdr lazy)))) ; (3 . #<procedure>)
+(car ((cdr ((cdr lazy))))) ; 3
+(cdr ((cdr ((cdr lazy))))) ; #<procedure>
+
+((cdr ((cdr ((cdr lazy)))))) ; #f

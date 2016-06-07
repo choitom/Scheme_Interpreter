@@ -1,0 +1,14 @@
+(define length
+    (lambda(L)
+        (if (null? L)
+            0
+            (+ 1 (length (cdr L))))))
+
+
+(length (quote (4 5 6 7 8 9 10)))
+
+
+(car (quote (4 5 6)))
+(cons (quote (1 2)) 2)
+(cons 3 4)
+(quote (1))
